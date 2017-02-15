@@ -1,94 +1,3 @@
-Lab - Working With Files
-==========
-Follow the instructions line-by-line.  
-
-* Type in the commands as is, but ignore the beginning prompt.  
-* Enter, tab, up and down are represented by <ENTER><TAB>,<UP> and <DOWN>.  
-* "No output" or "nothing happens" are valid answers to any of the questions.
-==========
-
-==========
-1. Open a new terminal window.
-[NO OUTPUT]
-----------
-==========
-2. Find out if mtec1003-lab-03 already exists (from the previous lab).  If it doesn't, go back to the previous lab and find the steps regarding downloading the lab materials.
-
-(See steps 1-8 in http://entertainmenttechnology.github.io/Wilson-MTEC1003/labs/03/lab-03-part-01-review.txt)
-[NO OUTPUT]
-----------
-==========
-3. Change your directory mtec1003-lab-03
-[NO OUTPUT]
-----------
-==========
-4. Create a directory called my_files
-[NO OUTPUT]
-----------
-==========
-5. Change the directory to my_files
-[NO OUTPUT]
-----------
-==========
-6. Create a new file using touch.
-
-$ touch foo.txt
-$ ls
-Copy and paste the output below.
-----------
-ent-v314-005:my_files student$ touch foo.txt
-ent-v314-005:my_files student$ ls
-foo.txt
-
-==========
-7. Create another new file using touch.
-
-$ touch bar.txt
-----------
-ent-v314-005:my_files student$ touch bar.txt
-ent-v314-005:my_files student$ pwd
-/Users/student/mtec1003-lab-03/my_files
-ent-v314-005:my_files student$ ls
-bar.txt	foo.txt
-
-
-==========
-8. List the files in this directory using the flag that gives the most details.
-
-Copy and paste the output below.
-----------
-ent-v314-005:my_files student$ ls -alt /Users/student/mtec1003-lab-03/my_files/foo.txt 
--rw-r--r--  1 student  staff  0 Feb 15 15:29 /Users/student/mtec1003-lab-03/my_files/foo.txt
-
-
-==========
-9. Create a copy of bar.txt called baz.txt and then list the files again.
-
-
-Write the command that you used to copy the file.  Additionally, copy and paste the output of your file listing below.
-----------
-ent-v314-005:my_files student$ cp bar.txt baz.txt
-ent-v314-005:my_files student$ ls
-bar.txt	baz.txt	foo.txt
-==========
-10. Delete the file called bar.txt and then list the files again.
-
-Write the command that you used to remove the file.  Copy and paste the output of your file listing below.
-----------
-ent-v314-005:my_files student$ rm bar.txt
-ent-v314-005:my_files student$ ls
-baz.txt	foo.txt
-==========
-11. Move the file called foo.txt to qux.txt and then list the files again.
-
-
-Write the command that you used to move the file.  Copy and paste the output of your file listing below.
-----------
-ent-v314-005:my_files student$ mv foo.txt qux.txt
-ent-v314-005:my_files student$ ls
-baz.txt	qux.txt
-
-==========
 12. Go up one directory so that you're in ~/mtec1003-lab-03.
 [NO OUTPUT]
 ----------
@@ -100,7 +9,8 @@ baz.txt	qux.txt
 
 Write out the command that you used and what happened.
 ----------
-
+ent-v314-005:mtec1003-lab-03 student$ rmdir my_files
+rmdir: my_files: Directory not empty
 
 
 ==========
@@ -108,8 +18,8 @@ Write out the command that you used and what happened.
 
 Write out the command that you used and what happened.
 ----------
-
-
+ent-v314-005:mtec1003-lab-03 student$ rm my_files
+rm: my_files: is a directory
 
 ==========
 15. MAKE SURE YOU'RE IN THE mtec1003-lab-03 directory!  
@@ -118,8 +28,9 @@ Force the removal of the directory and files using the -rf flag
 
 $ rm -rf my_files
 ----------
-
-
+ent-v314-005:mtec1003-lab-03 student$ rm -rf my_files
+ent-v314-005:mtec1003-lab-03 student$ ls
+books	logs	web
 
 ==========
 16. There's a txt file version of a book located in the mtec1003-lab-03 folder.  It is in the following directory if you're in the lab folder:
@@ -130,7 +41,7 @@ Use the command called cat on the file to show its contents.
 
 Describe what happened below.
 ----------
-
+There’s a lot of text
 
 
 ==========
@@ -142,8 +53,16 @@ Use the command, head, on the file to show the contents of the beginning of the 
 
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
+ent-v314-005:other student$ head pg1232.txt 
+The Project Gutenberg EBook of The Prince, by Nicolo Machiavelli
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
 
 
+Title: The Prince
 
 ==========
 18. Using the same file again!
@@ -154,8 +73,17 @@ Use tail on the file to show the contents of the end of the file.
 
 Write the command that you used below.  Write the last line of the output below.
 ----------
+ent-v314-005:other student$ tail pg1232.txt 
 
 
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.org
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
 
 ==========
 19. Using the same file...
@@ -166,28 +94,47 @@ Use less and more on the file to show the contents of the file.  Try pressing sp
 
 Write the command that you used below.  Describe what spacebar and q does after using either less or more.
 ----------
+ent-v314-005:other student$ more pg1232.txt 
+<U+FEFF>The Project Gutenberg EBook of The Prince, by Nicolo Machiavelli
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
 
 
+Title: The Prince
+
+Author: Nicolo Machiavelli
+
+Translator: W. K. Marriott
+
+Release Date: February 11, 2006 [EBook #1232]
+[This file last updated October 19, 2010]
+
+Language: English
+
+
+*** START OF THIS PROJECT GUTENBERG EBOOK THE PRINCE ***
 
 ==========
 20. Describe what situations you would use the following commands for viewing files: less, more, cat, tail, head
 
 (Some characteristics that may help your description might be the length of the file, whether or not you'd like to read the whole thing... or just the beginning or end, etc.)
 ----------
-
+A book popped up
 
 
 ==========
 21.  How many words are in pg1232.txt?  What command did you use to determine the word count?
 ----------
-
-
-
+52,639 words
+ent-v314-005:other student$ wc pg1232.txt 
 ==========
 22.  How many lines are in pg1232.txt?  What command did you use to determine the line count?
 ----------
-
-
+5,063 lines
+ent-v314-005:other student$ wc -l pg1232.txt 
 ==========
 OPTIONAL
 
